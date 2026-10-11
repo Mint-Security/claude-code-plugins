@@ -2,13 +2,14 @@
 
 Dividend explains what a Claude Code session carries and costs, while you work: a tip above the prompt when something is worth knowing, a short explanation in each, and a pane with the session's figures. It covers three areas, each of which can be turned off on its own: the prompt cache, the context, and your plan's limits.
 
-Dividend needs Claude Code 2.1.291 or newer; it is tested on 2.1.291. To install it, type this in Claude Code, answer `y` to add the marketplace, and pick where to install it:
+Dividend needs Claude Code 2.1.291 or newer; it is tested on 2.1.291. To install it, from a shell:
 
-```
-/plugin install dividend --marketplace Mint-Security/claude-code-plugins
+```bash
+claude plugin marketplace add Mint-Security/claude-code-plugins
+claude plugin install dividend@mint-security
 ```
 
-Then run `/dividend`. The [repository README](../../README.md#install) says how to stay on a reviewed release.
+Then run `/dividend` in a Claude Code session. Inside a terminal session, `/plugin install dividend --marketplace Mint-Security/claude-code-plugins` does the same in one line. The [repository README](../../README.md#install) has the desktop app's way, and how to stay on a reviewed release.
 
 ## What you see
 

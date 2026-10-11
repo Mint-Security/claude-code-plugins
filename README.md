@@ -8,15 +8,18 @@ Open-source plugins for [Claude Code](https://claude.com/claude-code) from Mint 
 
 ## Install
 
-Dividend needs Claude Code 2.1.291 or newer; it is tested on 2.1.291. In Claude Code, type:
+Dividend needs Claude Code 2.1.291 or newer; it is tested on 2.1.291. From a shell:
 
+```bash
+claude plugin marketplace add Mint-Security/claude-code-plugins
+claude plugin install dividend@mint-security
 ```
-/plugin install dividend --marketplace Mint-Security/claude-code-plugins
-```
 
-Answer `y` to add the marketplace, then pick where to install it. Then run `/dividend` to open its pane.
+Then start a Claude Code session, or run `/reload-plugins` in one that is open, and run `/dividend` to open its pane. The desktop app's Code tab picks it up too.
 
-Auto-update is off by default for this marketplace. To stay on a reviewed release, pin the marketplace to its tag instead: `/plugin marketplace add Mint-Security/claude-code-plugins#dividend--v0.1.0`, then `/plugin install dividend@mint-security`.
+Or, inside a terminal Claude Code session, in one line: `/plugin install dividend --marketplace Mint-Security/claude-code-plugins` (answer `y` to add the marketplace, then pick where to install it). In the desktop app, add the marketplace `Mint-Security/claude-code-plugins` under Settings, Plugins, Add, then install Dividend from it.
+
+Auto-update is off by default for this marketplace. To stay on a reviewed release, add the marketplace pinned to its tag instead: `claude plugin marketplace add Mint-Security/claude-code-plugins#dividend--v0.1.0`, then `claude plugin install dividend@mint-security`.
 
 ## Dividend
 
