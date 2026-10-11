@@ -1,0 +1,6 @@
+.DS_Store
+dist/
+*.zip
+.claude-plugin/types/
+**/.claude-plugin/types/
+plugins/*/tsconfig.json

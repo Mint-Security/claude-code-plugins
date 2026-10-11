@@ -1,0 +1,50 @@
+name: checks
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  schedule:
+    # Daily against the newest Claude Code, which ships often, to catch changes in the mod API early.
+    - cron: '0 6 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    strategy:
+      fail-fast: false
+      matrix:
+        claude-code: ${{ github.event_name == 'schedule' && fromJSON('["latest"]') || fromJSON('["2.1.291"]') }}
+    env:
+      DISABLE_AUTOUPDATER: '1'
+      CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC: '1'
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version: 22
+      - name: Install Claude Code
+        env:
+          CLAUDE_CODE_VERSION: ${{ matrix.claude-code }}
+        run: npm install -g "@anthropic-ai/claude-code@${CLAUDE_CODE_VERSION}"
+      - run: claude --version
+      - name: Validate
+        run: |
+          claude plugin validate --strict .
+          claude plugin validate --strict plugins/dividend
+      - name: Test
+        run: claude plugin test plugins/dividend
+      - name: Install from the marketplace, and run it
+        run: |
+          claude plugin marketplace add ./
+          claude plugin install dividend@mint-security
+          claude plugin details dividend
+          claude -p "/dividend session" < /dev/null | tee session.txt
+          grep -q "Dividend · this session" session.txt

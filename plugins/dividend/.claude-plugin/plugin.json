@@ -1,0 +1,52 @@
+{
+  "name": "dividend",
+  "displayName": "Dividend",
+  "version": "0.1.0",
+  "description": "Make sense of your Claude Code session's context, prompt cache, and usage limits through quick tips and short lessons. Insights come from what Claude Code reports; everything stays within your machine.",
+  "author": {
+    "name": "Mint Security",
+    "email": "opensource@mint.security"
+  },
+  "homepage": "https://github.com/Mint-Security/claude-code-plugins/tree/main/plugins/dividend",
+  "repository": "https://github.com/Mint-Security/claude-code-plugins",
+  "license": "Apache-2.0",
+  "types": "./types/index.d.ts",
+  "userConfig": {
+    "tips": {
+      "type": "boolean",
+      "title": "Cost tips",
+      "description": "Suggest ways to trim what a session carries and costs, from what Claude Code itself reports.",
+      "default": true
+    },
+    "cache": {
+      "type": "boolean",
+      "title": "Prompt cache tips",
+      "description": "When the cache went cold and why, a word before your next message once it has lapsed, and an offer to compact before a break.",
+      "default": true
+    },
+    "context": {
+      "type": "boolean",
+      "title": "Context tips",
+      "description": "What a long conversation, MCP tool descriptions and instruction files add to every message.",
+      "default": true
+    },
+    "limits": {
+      "type": "boolean",
+      "title": "Limit tips",
+      "description": "Your 5-hour and weekly limits, the spend alert, and when a lighter model would do.",
+      "default": true
+    },
+    "actions": {
+      "type": "boolean",
+      "title": "Action buttons",
+      "description": "Offer Compact now and Ask Claude buttons on the tips where they help. Dividend never compacts, or asks Claude anything, on its own.",
+      "default": true
+    },
+    "budgetUsd": {
+      "type": "number",
+      "title": "Spend alert (USD)",
+      "description": "Say so each time a session passes another multiple of this many dollars at list price, as /cost counts it. 0 turns it off. On a seat plan this is not your bill.",
+      "default": 0
+    }
+  }
+}

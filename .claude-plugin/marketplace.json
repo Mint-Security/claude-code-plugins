@@ -1,0 +1,21 @@
+{
+  "name": "mint-security",
+  "owner": {
+    "name": "Mint Security",
+    "email": "opensource@mint.security"
+  },
+  "metadata": {
+    "description": "Open-source Claude Code plugins from Mint Security"
+  },
+  "plugins": [
+    {
+      "name": "dividend",
+      "source": "./plugins/dividend",
+      "description": "Make sense of your Claude Code session's context, prompt cache, and usage limits through quick tips and short lessons. Insights come from what Claude Code reports; everything stays within your machine.",
+      "author": {
+        "name": "Mint Security"
+      },
+      "license": "Apache-2.0"
+    }
+  ]
+}
