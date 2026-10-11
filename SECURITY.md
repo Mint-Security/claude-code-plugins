@@ -17,4 +17,4 @@ What it keeps, and for how long, is in [plugins/dividend/README.md](plugins/divi
 
 ## Updates
 
-Auto-update is off by default for this marketplace, so an installed copy changes only when you update it. To stay on a reviewed release, add the marketplace pinned to its tag, for example `/plugin marketplace add Mint-Security/claude-code-plugins#dividend--v0.1.0`.
+Auto-update is off by default for this marketplace, so an installed copy changes only when you update it. To stay on a reviewed release, add the marketplace pinned to its tag, for example `claude plugin marketplace add Mint-Security/claude-code-plugins#dividend--v0.1.0`.
