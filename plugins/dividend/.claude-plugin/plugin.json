@@ -7,8 +7,8 @@
     "name": "Mint Security",
     "email": "opensource@mint.security"
   },
-  "homepage": "https://github.com/Mint-Security/claude-code-plugins/tree/main/plugins/dividend",
-  "repository": "https://github.com/Mint-Security/claude-code-plugins",
+  "homepage": "https://github.com/Mint-Security/open-kitchen/tree/main/plugins/dividend",
+  "repository": "https://github.com/Mint-Security/open-kitchen",
   "license": "Apache-2.0",
   "types": "./types/index.d.ts",
   "userConfig": {
