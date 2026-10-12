@@ -5,11 +5,11 @@ Dividend explains what a Claude Code session carries and costs, while you work: 
 Dividend needs Claude Code 2.1.291 or newer; it is tested on 2.1.291. To install it, from a shell:
 
 ```bash
-claude plugin marketplace add Mint-Security/claude-code-plugins
+claude plugin marketplace add Mint-Security/open-kitchen
 claude plugin install dividend@mint-security
 ```
 
-Then run `/dividend` in a Claude Code session. Inside a terminal session, `/plugin install dividend --marketplace Mint-Security/claude-code-plugins` does the same in one line. The [repository README](../../README.md#install) has the desktop app's way, and how to stay on a reviewed release.
+Then run `/dividend` in a Claude Code session. Inside a terminal session, `/plugin install dividend --marketplace Mint-Security/open-kitchen` does the same in one line. The [repository README](../../README.md#claude-code-marketplace) has the desktop app's way, and [SECURITY.md](../../SECURITY.md#updates) how to stay on a reviewed release.
 
 ## What you see
 
